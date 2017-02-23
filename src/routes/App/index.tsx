@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'react-router'
 import { Button } from 'antd';
 import './App.css';
 
@@ -14,12 +13,7 @@ class App extends React.Component<null, null> {
           <h2>Welcome to React</h2>
         </div>
         <Button type="primary">Button</Button>
-        <ul>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/inbox">Inbox</Link></li>
-        </ul>
         <p className="App-intro">
-          {this.props.children}
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
       </div>
