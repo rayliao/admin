@@ -29,6 +29,7 @@
     "src/setupTests.ts"
   ],
   "types": [
-    "typePatches"
+    "typePatches",
+    "./typings/index.d.ts"
   ]
 }

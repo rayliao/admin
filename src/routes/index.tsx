@@ -1,5 +1,5 @@
 // We only need to import the modules necessary for initial render
-/// <reference path="../../node_modules/hake/typings/index.d.ts" />
+/// <reference path="../../typings/index.d.ts" />
 
 import { RouteConfig } from 'react-router'
 
