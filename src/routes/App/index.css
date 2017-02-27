@@ -1,0 +1,137 @@
+body {
+    font-size: 14px;
+    color: #2b2b2b;
+}
+
+.app-layout {
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1
+}
+
+.app-layout .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.app-layout .trigger:hover {
+    color: #108ee9;
+}
+
+.app-layout .logo {
+    height: 32px;
+    background: #333;
+    border-radius: 6px;
+    margin: 16px;
+}
+
+.app-layout .app-layout .ant-layout-sider-collapsed .anticon {
+    font-size: 16px;
+}
+
+.app-layout .app-layout .ant-layout-sider-collapsed .nav-text {
+    display: none;
+}
+
+.app-layout .header {
+    float: right;
+    margin-right: 24px;
+}
+
+.app-layout .header .ant-menu-inline,
+.app-layout .header .ant-menu-inline .ant-menu-item {
+    border-right: 0
+}
+
+.app-layout .ant-layout-sider {
+    width: 224px;
+    background: #404040;
+    transition: all 0.3s ease;
+}
+
+.app-layout .ant-layout-sider-collapsed {
+    width: 64px;
+    transition: all 0.3s ease;
+    overflow: visible;
+}
+
+.app-layout .ant-layout-sider>.ant-menu {
+    margin-bottom: 20px;
+}
+
+.app-layout .ant-menu-dark.ant-menu-inline .ant-menu-item-selected {
+    background-color: transparent
+}
+
+.app-layout .ant-layout-sider>.ant-menu>.ant-menu-submenu {
+    margin: 8px 0;
+}
+
+.app-layout .ant-layout-sider>.ant-menu>.ant-menu-submenu .nav-text {
+    vertical-align: baseline;
+    display: inline-block;
+}
+
+.app-layout .ant-layout-sider>.ant-menu>.ant-menu-submenu .anticon {
+    transition: font-size 0.3s;
+}
+
+.app-layout .ant-layout-sider-collapsed>.ant-menu>.ant-menu-submenu {
+    transition: all 0.5s ease;
+}
+
+.app-layout .ant-layout-sider-collapsed>.ant-menu>.ant-menu-submenu>.ant-menu-submenu-title {
+    padding-left: 22px;
+}
+
+.app-layout .ant-layout-sider-collapsed>.ant-menu>.ant-menu-submenu>.ant-menu-submenu-title::after {
+    font-size: 0;
+}
+
+.app-layout .ant-layout-sider-collapsed>.ant-menu>.ant-menu-submenu .anticon {
+    font-size: 20px;
+    display: inline-block;
+}
+
+.app-layout .ant-layout-sider-collapsed>.ant-menu>.ant-menu-submenu .nav-text {
+    display: none;
+}
+
+.ant-layout-sider>.ant-menu>.ant-menu-submenu:hover {
+    background: #3c3c3c;
+    transition: all 0s ease;
+}
+
+.app-layout .ant-layout-sider-collapsed>.ant-menu>.ant-menu-submenu:hover .nav-text {
+    display: inline-block;
+    vertical-align: top;
+    background: #3c3c3c;
+    color: #108ee9;
+    padding-right: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.app-layout .ant-layout-sider-collapsed>.ant-menu>.ant-menu-submenu:hover .anticon {
+    display: none;
+}
+
+.app-layout .ant-layout-sider-collapsed>.ant-menu>.ant-menu-submenu:hover>.ant-menu-submenu-title {
+    padding: 0;
+    text-align: center;
+}
+
+
+/* ant-table */
+
+.ant-table {
+    font-size: 14px;
+}
+
+.ant-table-pagination {
+    float: none
+}

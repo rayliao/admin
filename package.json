@@ -3,32 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts-ts": "1.1.6"
+    "plop": "^1.7.4",
+    "react-scripts-ts": "^1.1.6"
   },
   "dependencies": {
     "@types/jest": "^18.1.1",
-    "@types/node": "^7.0.5",
-    "@types/react": "^15.0.10",
-    "@types/react-dom": "^0.14.23",
-    "@types/react-redux": "^4.4.36",
-    "@types/react-router": "^3.0.4",
-    "@types/react-router-redux": "^4.0.40",
-    "@types/redux-immutable": "^3.0.33",
-    "antd": "^2.7.1",
-    "immutable": "^3.8.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-redux": "^5.0.3",
-    "react-router": "^3.0.2",
-    "react-router-redux": "^4.0.8",
-    "redux": "^3.6.0",
-    "redux-immutable": "^3.1.0",
-    "redux-pack": "^0.1.4"
+    "antd": "^2.7.2",
+    "axios": "^0.15.3",
+    "hake": "^2.1.1",
+    "rc-queue-anim": "^0.13.0",
+    "typescript": "^2.2.1"
   },
   "scripts": {
     "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
+    "build": "react-scripts-ts build && node scripts/index.js",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
-  }
+    "g": "plop --plopfile scripts/generators/index.js"
+  },
+  "proxy": "http://172.16.1.6:881/"
 }
