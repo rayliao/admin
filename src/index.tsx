@@ -16,87 +16,33 @@ import configureStore from './utils/configureStore'
 
 import 'antd/dist/antd.css'
 
-type Routes = (store: Store) => RouteConfig
-interface options {
-  /**
-   * @type {(Routes | RouteConfig)}
-   * 
-   */
-  routes: Routes | RouteConfig
-  initialState?
-  asyncReducers?: {}
-  history?: History
-  rootReducer?: Function
-  /**
-   * @type {Function}
-   */
-  render?: Function
-}
 interface Render {
   store
   routes: RouteConfig
   history?: History
 }
 
-const defaultRender = ({store, routes, history} : Render) => <Provider store={store}>  
+const render = ({store, routes, history} : Render) => <Provider store={store}>  
     <Router history={history}>
       {routes}
     </Router>
   </Provider>
 
 /**
- * configure routes and others then start the app immediately
- * @param {options} options 
- * @param {string} target the target render to
+ * configure store
  */
-const hake = (
-  {
-    routes,
-    initialState = Map(),
-    asyncReducers = {},
-    history = browserHistory,
-    rootReducer,
-    render = defaultRender
-  }: options,
-  target = 'root'
-) => {
+const store = configureStore(Map(), {table: tableReducer}, logoutReducer)
 
-  /**
-   * configure store
-   */
-  const store = configureStore(initialState, asyncReducers, rootReducer)
-  /**
-   * sync history with immutable support
-   */
-  const appHistory = syncHistoryWithStore(history, store, {
-    selectLocationState(state: any) {
-      return state.get('routing').toJS()
-    }
-  })
-  /**
-   * call routes with param store if it's a function 
-   */
-  if (typeof routes === 'function') {
-    routes = routes(store)
+let history: History = browserHistory
+
+const appHistory = syncHistoryWithStore(history, store, {
+  selectLocationState(state: any) {
+    return state.get('routing').toJS()
   }
-  /**
-   * render params 
-   */
-  const renderParams = { store, routes, history: appHistory }
-  /**
-   * render 
-   */
-  const appRender = render(renderParams)
-
-  /**
-   * here we go
-   */
-  ReactDOM.render(appRender, document.getElementById(target))
-
-}
-
-hake({
-  asyncReducers: { table: tableReducer },
-  rootReducer: logoutReducer,
-  routes: store => configureRoutes(store),
 })
+
+const routes = configureRoutes(store)
+
+const renderParams = { store, routes, history: appHistory }
+
+ReactDOM.render(render(renderParams), document.getElementById('root'))
